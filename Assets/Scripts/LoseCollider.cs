@@ -8,7 +8,7 @@ public class LoseCollider : MonoBehaviour
 	void OnTriggerEnter2D (Collider2D trigger)
 	{
 		print ("Trigger"); 
-		LevelManager.LoadLevelWrapper ("Level_01");
+		LevelManager.LoadLevel ("Level_01");
 
 
 	}
