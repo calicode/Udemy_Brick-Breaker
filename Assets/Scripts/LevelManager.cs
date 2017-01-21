@@ -24,6 +24,15 @@ public class LevelManager : MonoBehaviour
 		Debug.Log ("quit called");
 	
 		Application.Quit ();
+	
+	}
+
+	/// <summary>
+	/// Loads the next level.
+	/// </summary>
+	public static void LoadNextLevel ()
+	{
+		SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
 	}
 
 }
