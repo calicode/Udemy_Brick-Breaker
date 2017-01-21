@@ -11,16 +11,17 @@ public class Brick : MonoBehaviour
 	void OnCollisionEnter2D (Collision2D trigger)
 	{
 		timesHit++;
-		//SimulateWin ();
-		LevelManager.LoadNextLevel ();
+		if (timesHit >= maxHits) {
+			Destroy (gameObject);
+		}
+
+		//if (GameObject.FindObjectsOfType (Brick)){}
+		//LevelManager.LoadNextLevel ();
 
 	}
 
 	/// <summary>
-	/// Simulate Win state, replace at some point. 
+	/// Simulate Win state, replace at some point.
 	/// </summary>
-	void SimulateWin ()
-	{
-	}
 }
 
