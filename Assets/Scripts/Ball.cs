@@ -8,16 +8,25 @@ public class Ball : MonoBehaviour
 	private Paddle paddle;
 	public Rigidbody2D rb;
 	private bool hasStarted = false;
+	AudioSource audioClip;
+
 
 	// Use this for initialization
 	void Start ()
 	{
+		audioClip = GetComponent <AudioSource> ();
 		paddle = GameObject.FindObjectOfType<Paddle> ();
 		paddleToBallVector = this.transform.position - paddle.transform.position;
 
 	}
 	
 	// Update is called once per frame
+
+	void OnCollisionEnter2D (Collision2D trigger)
+	{
+		audioClip.Play ();
+	}
+
 	void Update ()
 	{
 		if (!hasStarted) {
