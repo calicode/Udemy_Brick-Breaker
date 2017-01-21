@@ -23,11 +23,12 @@ public class Ball : MonoBehaviour
 		if (!hasStarted) {
 
 			this.transform.position = paddle.transform.position + paddleToBallVector;
+			if (Input.GetMouseButtonDown (0)) {
+				hasStarted = true;
 
+				this.rb.velocity = new Vector2 (2f, 10f);
+			}
 		}	
-		if (Input.GetMouseButtonDown (0)) {
-			hasStarted = true;
-			this.rb.velocity = new Vector2 (2f, 10f);
-		}
+	
 	}
 }

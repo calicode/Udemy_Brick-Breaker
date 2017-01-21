@@ -4,24 +4,30 @@ using UnityEngine;
 
 public class Brick : MonoBehaviour
 {
-	public int maxHits = 0;
 	public int timesHit = 0;
+	public Sprite[] hitSprites;
 
 	// Use this for initialization
 	void OnCollisionEnter2D (Collision2D trigger)
 	{
 		timesHit++;
+		int maxHits = hitSprites.Length + 1;  
+
 		if (timesHit >= maxHits) {
 			Destroy (gameObject);
+		} else {
+			LoadSprites ();
 		}
 
-		//if (GameObject.FindObjectsOfType (Brick)){}
-		//LevelManager.LoadNextLevel ();
 
 	}
 
-	/// <summary>
-	/// Simulate Win state, replace at some point.
-	/// </summary>
+	void LoadSprites ()
+	{
+		int spriteIndex = timesHit - 1;
+		if (hitSprites [spriteIndex]) {
+			this.GetComponent <SpriteRenderer> ().sprite = hitSprites [spriteIndex]; 
+		}
+	}
 }
 
