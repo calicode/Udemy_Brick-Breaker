@@ -24,7 +24,10 @@ public class Ball : MonoBehaviour
 
 	void OnCollisionEnter2D (Collision2D trigger)
 	{
+
+		Vector2 velocityTweak = new Vector2 (Random.Range (0f, .2f), Random.Range (0f, .2f));
 		audioClip.Play ();
+		this.rb.velocity += velocityTweak;
 	}
 
 	void Update ()

@@ -27,3 +27,32 @@ C:\Github repositories\Udemy_Brick-Breaker\Temp\bin\Debug\UnityEngine.HoloLens.x
 C:\Github repositories\Udemy_Brick-Breaker\Temp\bin\Debug\UnityEngine.VR.xml
 C:\Github repositories\Udemy_Brick-Breaker\obj\Debug\Assembly-CSharp.dll
 C:\Github repositories\Udemy_Brick-Breaker\obj\Debug\Assembly-CSharp.pdb
+F:\Git Repos\Unity Projects\Udemy_Brick-Breaker\Temp\bin\Debug\Assembly-CSharp.dll
+F:\Git Repos\Unity Projects\Udemy_Brick-Breaker\Temp\bin\Debug\Assembly-CSharp.pdb
+F:\Git Repos\Unity Projects\Udemy_Brick-Breaker\Temp\bin\Debug\UnityEditor.dll
+F:\Git Repos\Unity Projects\Udemy_Brick-Breaker\Temp\bin\Debug\UnityEngine.Analytics.dll
+F:\Git Repos\Unity Projects\Udemy_Brick-Breaker\Temp\bin\Debug\UnityEngine.dll
+F:\Git Repos\Unity Projects\Udemy_Brick-Breaker\Temp\bin\Debug\UnityEngine.HoloLens.dll
+F:\Git Repos\Unity Projects\Udemy_Brick-Breaker\Temp\bin\Debug\UnityEngine.Networking.dll
+F:\Git Repos\Unity Projects\Udemy_Brick-Breaker\Temp\bin\Debug\UnityEngine.PlaymodeTestsRunner.dll
+F:\Git Repos\Unity Projects\Udemy_Brick-Breaker\Temp\bin\Debug\UnityEngine.UI.dll
+F:\Git Repos\Unity Projects\Udemy_Brick-Breaker\Temp\bin\Debug\UnityEngine.VR.dll
+F:\Git Repos\Unity Projects\Udemy_Brick-Breaker\Temp\bin\Debug\Mono.Cecil.dll
+F:\Git Repos\Unity Projects\Udemy_Brick-Breaker\Temp\bin\Debug\Unity.SerializationLogic.dll
+F:\Git Repos\Unity Projects\Udemy_Brick-Breaker\Temp\bin\Debug\Unity.DataContract.dll
+F:\Git Repos\Unity Projects\Udemy_Brick-Breaker\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+F:\Git Repos\Unity Projects\Udemy_Brick-Breaker\Temp\bin\Debug\Unity.UNetWeaver.dll
+F:\Git Repos\Unity Projects\Udemy_Brick-Breaker\Temp\bin\Debug\Unity.CecilTools.dll
+F:\Git Repos\Unity Projects\Udemy_Brick-Breaker\Temp\bin\Debug\Mono.Cecil.Pdb.dll
+F:\Git Repos\Unity Projects\Udemy_Brick-Breaker\Temp\bin\Debug\Mono.Cecil.Mdb.dll
+F:\Git Repos\Unity Projects\Udemy_Brick-Breaker\Temp\bin\Debug\UnityEngine.xml
+F:\Git Repos\Unity Projects\Udemy_Brick-Breaker\Temp\bin\Debug\UnityEditor.xml
+F:\Git Repos\Unity Projects\Udemy_Brick-Breaker\Temp\bin\Debug\UnityEngine.UI.xml
+F:\Git Repos\Unity Projects\Udemy_Brick-Breaker\Temp\bin\Debug\UnityEngine.Networking.xml
+F:\Git Repos\Unity Projects\Udemy_Brick-Breaker\Temp\bin\Debug\UnityEngine.PlaymodeTestsRunner.xml
+F:\Git Repos\Unity Projects\Udemy_Brick-Breaker\Temp\bin\Debug\UnityEngine.Analytics.xml
+F:\Git Repos\Unity Projects\Udemy_Brick-Breaker\Temp\bin\Debug\UnityEngine.HoloLens.xml
+F:\Git Repos\Unity Projects\Udemy_Brick-Breaker\Temp\bin\Debug\UnityEngine.VR.xml
+F:\Git Repos\Unity Projects\Udemy_Brick-Breaker\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+F:\Git Repos\Unity Projects\Udemy_Brick-Breaker\obj\Debug\Assembly-CSharp.dll
+F:\Git Repos\Unity Projects\Udemy_Brick-Breaker\obj\Debug\Assembly-CSharp.pdb
