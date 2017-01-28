@@ -47,7 +47,6 @@ public class Paddle : MonoBehaviour
 
 
 		Vector3 paddlePos = new Vector3 (ball.transform.position.x, this.transform.position.y, 0f);
-		print (paddlePos);
 		this.transform.position = paddlePos;
 	}
 	

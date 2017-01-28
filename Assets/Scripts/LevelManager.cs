@@ -15,7 +15,6 @@ public class LevelManager : MonoBehaviour
 
 		Brick.breakableCount = 0;
 		if (name == "lastPlayedLevel") {
-			print (lastPlayedLevel); 
 			SceneManager.LoadScene (lastPlayedLevel);
 		} else {
 			SceneManager.LoadScene (name);
