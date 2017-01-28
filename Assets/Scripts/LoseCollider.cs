@@ -6,11 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class LoseCollider : MonoBehaviour
 {
+	public GameObject ball;
+
 	void OnTriggerEnter2D (Collider2D trigger)
 	{
-		
-		LevelManager.lastPlayedLevel = SceneManager.GetActiveScene ().buildIndex;
-		LevelManager.LoadLevel ("Lose");
+		Instantiate (ball, startpos);
+
+		//LevelManager.lastPlayedLevel = SceneManager.GetActiveScene ().buildIndex;
+		//LevelManager.LoadLevel ("Lose");
 
 
 	}

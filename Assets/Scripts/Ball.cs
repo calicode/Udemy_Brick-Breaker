@@ -10,7 +10,6 @@ public class Ball : MonoBehaviour
 	private bool hasStarted = false;
 	AudioSource audioClip;
 
-
 	// Use this for initialization
 	void Start ()
 	{
