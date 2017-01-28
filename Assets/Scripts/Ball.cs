@@ -16,6 +16,7 @@ public class Ball : MonoBehaviour
 		audioClip = GetComponent <AudioSource> ();
 		paddle = GameObject.FindObjectOfType<Paddle> ();
 		paddleToBallVector = this.transform.position - paddle.transform.position;
+		//this.transform.position = new Vector3 (paddle.transform.position.x, paddle.transform.position.y + .3f, 0f);
 
 	}
 	
