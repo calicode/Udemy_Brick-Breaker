@@ -5,11 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+	public static int lastPlayedLevel;
+
 	public static void LoadLevel (string name)
 	{
+
+
 		Debug.Log ("Loading level " + name);
-		SceneManager.LoadScene (name);
+
 		Brick.breakableCount = 0;
+		if (name == "lastPlayedLevel") {
+			print (lastPlayedLevel); 
+			SceneManager.LoadScene (lastPlayedLevel);
+		} else {
+			SceneManager.LoadScene (name);
+		}
 
 	}
 
