@@ -1,11 +1,13 @@
 fileFormatVersion: 2
 guid: 6304e73cdb635b943b1d9eb96760c617
-timeCreated: 1485029066
+timeCreated: 1485828239
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - crack: {fileID: 8300000, guid: 62ce2557168fe4cd88680f364b3bcf95, type: 3}
+  - smoke: {fileID: 1859990146762842, guid: 7ddd3affd552b0a49820bec0f766e7f8, type: 2}
+  - fireBall: {fileID: 1619038981106176, guid: 6d13514da94035b4183032d972129936, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

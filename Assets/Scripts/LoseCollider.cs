@@ -16,7 +16,12 @@ public class LoseCollider : MonoBehaviour
 
 	void OnTriggerEnter2D (Collider2D trigger)
 	{
-		BallHandling ();
+		print (trigger.name);
+		if (trigger.name == "Ball" || trigger.name == "Ball(Clone)") {
+
+			BallHandling ();
+		} else
+			Destroy (trigger);
 	}
 
 

@@ -16,7 +16,6 @@ public class Ball : MonoBehaviour
 		audioClip = GetComponent <AudioSource> ();
 		paddle = GameObject.FindObjectOfType<Paddle> ();
 		paddleToBallVector = this.transform.position - paddle.transform.position;
-		//this.transform.position = new Vector3 (paddle.transform.position.x, paddle.transform.position.y + .3f, 0f);
 
 	}
 	
@@ -25,7 +24,7 @@ public class Ball : MonoBehaviour
 	void OnCollisionEnter2D (Collision2D trigger)
 	{
 
-		Vector2 velocityTweak = new Vector2 (Random.Range (0f, .2f), Random.Range (0f, .2f));
+		Vector2 velocityTweak = new Vector2 (Random.Range (0f, .4f), Random.Range (0f, .4f));
 		audioClip.Play ();
 		this.rb.velocity += velocityTweak;
 	}
