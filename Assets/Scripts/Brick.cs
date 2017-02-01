@@ -9,9 +9,8 @@ public class Brick : MonoBehaviour
 	public static int breakableCount = 0;
 	public AudioClip crack;
 	public GameObject smoke;
-	public GameObject fireBall;
-
-
+	public FireBall fireBall;
+	private GameObject fb;
 
 	void Start ()
 	{
@@ -45,11 +44,11 @@ public class Brick : MonoBehaviour
 				ParticleSystem.MainModule main = smokePuff.GetComponent<ParticleSystem> ().main;
 				main.startColor = GetComponent<SpriteRenderer> ().color;
 
-				Instantiate (fireBall, gameObject.transform.position, Quaternion.identity);
+				FireBall fb = (FireBall)Instantiate (fireBall, gameObject.transform.position, Quaternion.identity);
+				fb.fbHealth = maxHits;
 				Destroy (gameObject);
 				breakableCount--;
 
-				print ("breakable count is now" + breakableCount); 
 				if (breakableCount <= 0) {
 					LevelManager.LoadNextLevel ();
 				}

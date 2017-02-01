@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FireBall : MonoBehaviour
 {
+	public int fbHealth;
 	public Rigidbody2D rb;
 	// Use this for initialization
 	void Start ()
@@ -14,7 +15,11 @@ public class FireBall : MonoBehaviour
 
 	void OnCollisionEnter2D (Collision2D trigger)
 	{
-		
+		if (fbHealth <= 0) {
+			Destroy (gameObject);
+		} else {
+			fbHealth--;
+		}
 
 	}
 	// Update is called once per frame

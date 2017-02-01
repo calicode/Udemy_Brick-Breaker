@@ -19,11 +19,13 @@ public class LoseCollider : MonoBehaviour
 		print (trigger.name);
 		if (trigger.name == "Ball" || trigger.name == "Ball(Clone)") {
 
+		
+			Destroy (trigger.gameObject);
+			print ("Numb of balls is" + GameObject.FindObjectsOfType<Ball> ().Length);
 			BallHandling ();
 		} else
-			Destroy (trigger);
+			Destroy (trigger.gameObject);
 	}
-
 
 	void BallHandling ()
 	{
@@ -31,18 +33,15 @@ public class LoseCollider : MonoBehaviour
 		paddle = FindObjectOfType<Paddle> ();
 	
 		if (PlayerStats.LoseLive ()) {
-			Destroy (ball);
 
 			if (GameObject.FindObjectsOfType <Ball> ().Length < 2) {
 				Instantiate (ballPrefab, new Vector2 (paddle.transform.position.x, paddle.transform.position.y + .3f), Quaternion.identity);
 			}
 		
-		} else {
-			Destroy (ball);
-		}
 	
+		}
+
+
 	}
 
-
 }
-

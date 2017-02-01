@@ -21,13 +21,19 @@ public class Ball : MonoBehaviour
 	
 	// Update is called once per frame
 
-	void OnCollisionEnter2D (Collision2D trigger)
+	void OnCollisionEnter2D (Collision2D collision)
 	{
 
-		Vector2 velocityTweak = new Vector2 (Random.Range (0f, .4f), Random.Range (0f, .4f));
+		//if (trigger.name != "FireBall" || trigger.name != "FireBall(Clone") {
+
+		Vector2 velocityTweak = new Vector2 (Random.Range (0f, 0.2f), Random.Range (0f, 0.2f));
 		audioClip.Play ();
 		this.rb.velocity += velocityTweak;
+		print ("Ball velocity is now" + this.rb.velocity); 
+		//}
 	}
+
+
 
 	void Update ()
 	{

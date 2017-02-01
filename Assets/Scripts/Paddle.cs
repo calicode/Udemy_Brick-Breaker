@@ -25,6 +25,14 @@ public class Paddle : MonoBehaviour
 
 	}
 
+	void OnCollisionEnter2D (Collision2D collision)
+	{
+		print ("Paddle Collider is" + collision.gameObject);
+		float frictionTweak = this.transform.position.x / 5;
+		collision.rigidbody.velocity = new Vector3 ((collision.rigidbody.velocity.x + frictionTweak), collision.rigidbody.velocity.y, 0f);
+
+	}
+
 	/// <summary>
 	/// Moves the with mouse.
 	/// </summary>
