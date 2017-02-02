@@ -27,8 +27,10 @@ public class Paddle : MonoBehaviour
 
 	void OnCollisionEnter2D (Collision2D collision)
 	{
-		print ("Paddle Collider is" + collision.gameObject);
+		print ("Paddle Collider is" + collision.gameObject.name);
+
 		float frictionTweak = this.transform.position.x / 5;
+		print ("Transform frictiontweak from paddole collision is" + frictionTweak);
 		collision.rigidbody.velocity = new Vector3 ((collision.rigidbody.velocity.x + frictionTweak), collision.rigidbody.velocity.y, 0f);
 
 	}

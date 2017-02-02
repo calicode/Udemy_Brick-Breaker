@@ -9,7 +9,7 @@ public class Ball : MonoBehaviour
 	public Rigidbody2D rb;
 	private bool hasStarted = false;
 	AudioSource audioClip;
-
+	private string colName;
 	// Use this for initialization
 	void Start ()
 	{
@@ -23,13 +23,13 @@ public class Ball : MonoBehaviour
 
 	void OnCollisionEnter2D (Collision2D collision)
 	{
-
-		if (collision.gameObject != FireBall) {
-			print ("Ball collided with" + collision.gameObject);
+		colName = collision.gameObject.name;
+		print ("Colname is " + colName);
+		if (colName != "Fireball" || colName != "FireBall(Clone)") {
+			print ("Ball collided with " + collision.gameObject.name);
 			Vector2 velocityTweak = new Vector2 (Random.Range (0f, 0.2f), Random.Range (0f, 0.2f));
 			audioClip.Play ();
 			this.rb.velocity += velocityTweak;
-			print ("Ball velocity is now" + this.rb.velocity); 
 		}
 	}
 
@@ -39,7 +39,9 @@ public class Ball : MonoBehaviour
 	{
 		if (!hasStarted) {
 
+			print ("Mouse position is" + Input.mousePosition);
 			this.transform.position = paddle.transform.position + paddleToBallVector;
+
 			if (Input.GetMouseButtonDown (0)) {
 				hasStarted = true;
 
