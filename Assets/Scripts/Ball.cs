@@ -24,13 +24,13 @@ public class Ball : MonoBehaviour
 	void OnCollisionEnter2D (Collision2D collision)
 	{
 
-		//if (trigger.name != "FireBall" || trigger.name != "FireBall(Clone") {
-
-		Vector2 velocityTweak = new Vector2 (Random.Range (0f, 0.2f), Random.Range (0f, 0.2f));
-		audioClip.Play ();
-		this.rb.velocity += velocityTweak;
-		print ("Ball velocity is now" + this.rb.velocity); 
-		//}
+		if (collision.gameObject != FireBall) {
+			print ("Ball collided with" + collision.gameObject);
+			Vector2 velocityTweak = new Vector2 (Random.Range (0f, 0.2f), Random.Range (0f, 0.2f));
+			audioClip.Play ();
+			this.rb.velocity += velocityTweak;
+			print ("Ball velocity is now" + this.rb.velocity); 
+		}
 	}
 
 
