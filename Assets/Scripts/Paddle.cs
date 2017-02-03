@@ -5,19 +5,23 @@ using UnityEngine;
 public class Paddle : MonoBehaviour
 {
 	float mousePosInBlocks = 0;
+	Vector3 mousePosRaw;
 	public bool autoPlay = true;
 	private Ball ball;
+	private LineRenderer lineRender;
+	private int paddleSpeed = 10;
 
 	// Use this for initialization
 	void Start ()
 	{
+		lineRender = GetComponent <LineRenderer> ();
 		ball = GameObject.FindObjectOfType<Ball> ();
 	}
 	// Update is called once per frame
 	void Update ()
 	{ 
 		if (!autoPlay) {
-			MoveWithMouse ();
+			PlayerControlledMovement ();
 		} else {
 			AutoPlay ();
 		}
@@ -25,27 +29,25 @@ public class Paddle : MonoBehaviour
 
 	}
 
-	void OnCollisionEnter2D (Collision2D collision)
-	{
-		print ("Paddle Collider is" + collision.gameObject.name);
 
-		float frictionTweak = this.transform.position.x / 5;
-		print ("Transform frictiontweak from paddole collision is" + frictionTweak);
-		collision.rigidbody.velocity = new Vector3 ((collision.rigidbody.velocity.x + frictionTweak), collision.rigidbody.velocity.y, 0f);
-
-	}
 
 	/// <summary>
-	/// Moves the with mouse.
+	/// Players the controlled movement.
 	/// </summary>
-	void MoveWithMouse ()
+	void PlayerControlledMovement ()
 	{
+		float hMovement = Input.GetAxisRaw ("Horizontal");
+		float hSpeed = Mathf.Clamp (hMovement, 1f, 15f);
+
+		mousePosRaw = Input.mousePosition;
+		//mousePosInBlocks = mousePosRaw.x / Screen.width * 16;
+		print ("hSpeed is" + hSpeed); 
+		transform.position = new Vector3 (hSpeed, 0f, 0f);	
+		lineRender.SetPosition (0, this.transform.position);
+		lineRender.SetPosition (1, mousePosRaw / Screen.width * 16);
 
 
-		mousePosInBlocks = Input.mousePosition.x / Screen.width * 16;
-		Vector3 paddlePos = new Vector3 (0.5f, this.transform.position.y, 0f);
-		paddlePos.x = Mathf.Clamp (mousePosInBlocks, 1f, 15f);
-		this.transform.position = paddlePos;
+		//print ("Mouseposraw is" + mousePosRaw + "line is" + lineRender.GetPosition (0) + " And " + lineRender.GetPosition (1)); 
 
 	}
 

@@ -8,9 +8,6 @@ public class Brick : MonoBehaviour
 	public Sprite[] hitSprites;
 	public static int breakableCount = 0;
 	public AudioClip crack;
-	public GameObject smoke;
-	public FireBall fireBall;
-	private GameObject fb;
 
 	void Start ()
 	{
@@ -39,13 +36,8 @@ public class Brick : MonoBehaviour
 			int maxHits = hitSprites.Length + 1;  
 
 			if (timesHit >= maxHits) {
-				GameObject smokePuff = Instantiate (smoke, gameObject.transform.position, Quaternion.identity);
-			
-				ParticleSystem.MainModule main = smokePuff.GetComponent<ParticleSystem> ().main;
-				main.startColor = GetComponent<SpriteRenderer> ().color;
 
-				FireBall fb = (FireBall)Instantiate (fireBall, gameObject.transform.position, Quaternion.identity);
-				fb.fbHealth = maxHits;
+
 				Destroy (gameObject);
 				breakableCount--;
 

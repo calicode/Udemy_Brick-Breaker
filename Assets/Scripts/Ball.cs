@@ -24,13 +24,12 @@ public class Ball : MonoBehaviour
 	void OnCollisionEnter2D (Collision2D collision)
 	{
 		colName = collision.gameObject.name;
-		print ("Colname is " + colName);
-		if (colName != "Fireball" || colName != "FireBall(Clone)") {
-			print ("Ball collided with " + collision.gameObject.name);
-			Vector2 velocityTweak = new Vector2 (Random.Range (0f, 0.2f), Random.Range (0f, 0.2f));
-			audioClip.Play ();
-			this.rb.velocity += velocityTweak;
-		}
+		Vector2 velocityTweak = new Vector2 (Random.Range (0f, 0.2f), Random.Range (0f, 0.2f));
+		audioClip.Play ();
+		this.rb.velocity += velocityTweak;
+		print ("Ball velocity is now" + this.rb.velocity);
+		print ("Ball angular velocity is now" + this.rb.angularVelocity); 
+
 	}
 
 
@@ -39,7 +38,6 @@ public class Ball : MonoBehaviour
 	{
 		if (!hasStarted) {
 
-			print ("Mouse position is" + Input.mousePosition);
 			this.transform.position = paddle.transform.position + paddleToBallVector;
 
 			if (Input.GetMouseButtonDown (0)) {
