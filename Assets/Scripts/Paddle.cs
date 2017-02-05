@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Paddle : MonoBehaviour
 {
-	float mousePosInBlocks = 0;
 	Vector3 mousePosRaw;
 	public bool autoPlay = true;
 	private Ball ball;
 	private LineRenderer lineRender;
-	private int paddleSpeed = 10;
+	public float paddleSpeed = 2f;
 
 	// Use this for initialization
 	void Start ()
@@ -36,13 +35,15 @@ public class Paddle : MonoBehaviour
 	/// </summary>
 	void PlayerControlledMovement ()
 	{
-		float hMovement = Input.GetAxisRaw ("Horizontal");
-		float hSpeed = Mathf.Clamp (hMovement, 1f, 15f);
+		float hMovement = Input.GetAxis ("Horizontal");
+		//float hSpeed = new Vector3(
 
 		mousePosRaw = Input.mousePosition;
 		//mousePosInBlocks = mousePosRaw.x / Screen.width * 16;
-		print ("hSpeed is" + hSpeed); 
-		transform.position = new Vector3 (hSpeed, 0f, 0f);	
+		transform.Translate (hMovement * paddleSpeed, 0f, 0f);
+		print ("hmove div speed is" + (hMovement * paddleSpeed));
+		transform.position = new Vector3 (Mathf.Clamp (transform.position.x, 1f, 15f), transform.position.y, 0f);
+		print ("transform pos is" + transform.position);
 		lineRender.SetPosition (0, this.transform.position);
 		lineRender.SetPosition (1, mousePosRaw / Screen.width * 16);
 
