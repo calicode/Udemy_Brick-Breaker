@@ -10,6 +10,16 @@ public class Ball : MonoBehaviour
 	private bool hasStarted = false;
 	AudioSource audioClip;
 	private string colName;
+	private int baseDamage = 1;
+	private int currentDamage = 1;
+	private int currentCharge = 0;
+	private int baseCharge = 0;
+	private int maxCharge = 10;
+	private int chargeMultiplier = 5;
+
+
+
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -18,17 +28,51 @@ public class Ball : MonoBehaviour
 		paddleToBallVector = this.transform.position - paddle.transform.position;
 
 	}
-	
+
+	public void PowerUp ()
+	{
+		if (currentCharge < maxCharge) {
+			currentCharge++;
+		}
+
+		if (currentCharge >= maxCharge && currentDamage == baseDamage) {
+			currentDamage *= chargeMultiplier;
+
+		}
+
+
+
+
+
+
+	}
+
+	public void PowerDown ()
+	{
+		if (currentCharge >= maxCharge) {
+			currentDamage = baseDamage;
+			currentCharge = baseCharge; 
+
+		}
+
+	}
+
+	public int GetDamage ()
+	{
+		PowerUp ();
+		int tempDamage = currentDamage;
+		PowerDown ();
+		return tempDamage;
+	}
+
+
 	// Update is called once per frame
 
 	void OnCollisionEnter2D (Collision2D collision)
 	{
-		colName = collision.gameObject.name;
 		Vector2 velocityTweak = new Vector2 (Random.Range (0f, 0.2f), Random.Range (0f, 0.2f));
 		audioClip.Play ();
 		this.rb.velocity += velocityTweak;
-		print ("Ball velocity is now" + this.rb.velocity);
-		print ("Ball angular velocity is now" + this.rb.angularVelocity); 
 
 	}
 
@@ -43,7 +87,7 @@ public class Ball : MonoBehaviour
 			if (Input.GetMouseButtonDown (0)) {
 				hasStarted = true;
 
-				this.rb.velocity = new Vector2 (2f, 10f);
+				this.rb.AddForce (paddle.GetMousePositionTranslated () * 30f);
 			}
 		}	
 	

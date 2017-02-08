@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class Brick : MonoBehaviour
 {
-	public int timesHit = 0;
+	public int brickHealth;
 	public Sprite[] hitSprites;
 	public static int breakableCount = 0;
 	public AudioClip crack;
+	private Ball ball;
 
 	void Start ()
 	{
 		if (this.tag == "Breakable") {
 			breakableCount++;
 		}
+		ball = FindObjectOfType<Ball> ();
+		brickHealth = hitSprites.Length + 1;
 	}
 
 
@@ -32,10 +35,9 @@ public class Brick : MonoBehaviour
 	{
 		AudioSource.PlayClipAtPoint (crack, transform.position);
 		if (gameObject.tag == "Breakable") {
-			timesHit++;
-			int maxHits = hitSprites.Length + 1;  
+			brickHealth -= ball.GetDamage ();
 
-			if (timesHit >= maxHits) {
+			if (brickHealth <= 0) {
 
 
 				Destroy (gameObject);
@@ -52,7 +54,7 @@ public class Brick : MonoBehaviour
 
 	void LoadSprites ()
 	{
-		int spriteIndex = timesHit - 1;
+		int spriteIndex = brickHealth - 1;
 		if (hitSprites [spriteIndex]) {
 			this.GetComponent <SpriteRenderer> ().sprite = hitSprites [spriteIndex]; 
 		} else {
